@@ -11,7 +11,7 @@ public class StorageActor extends AbstractActor{
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().
-                match(MessageSetResult.class, setResult).
+                match(MessageSetResult.class, setResult(m)).
                 match(MessageGetResult.class, m -> sender().tell(m.getResult())).
                 build();
     }
@@ -19,7 +19,7 @@ public class StorageActor extends AbstractActor{
     private void setResult(MessageSetResult m) {
         if (storage.containsKey()) {
             storage.get().
-                    add(m.getResult);
+                    add(m.getResult());
         } else {
             storage.put(
                     m.getId(),

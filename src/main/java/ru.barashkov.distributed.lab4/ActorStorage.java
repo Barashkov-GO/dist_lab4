@@ -22,7 +22,7 @@ public class ActorStorage extends AbstractActor{
                 match(
                         MessageGetResult.class,
                         m -> sender().tell(
-                                new TestResultReply(
+                                new PackageResultReply(
                                     m.getId(),
                                     storage.get(m.getId())
                                 ),

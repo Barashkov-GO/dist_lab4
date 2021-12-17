@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
-public class TestResultReply {
+public class PackageResultReply {
     private final Integer Id;
     private final ArrayList<TestResult> testResults;
 
-    public TestResultReply(
+    public PackageResultReply(
             @JsonProperty("packageId") Integer packageId,
             @JsonProperty("testResults") ArrayList<TestResult> testResults) {
         this.Id = packageId;

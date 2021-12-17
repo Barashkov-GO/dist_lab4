@@ -12,5 +12,11 @@ public class TestActor extends AbstractActor {
     public Receive createReceive() {
     }
 
-    private void 
+    private void executeJS() {
+        ScriptEngine engine = new
+                ScriptEngineManager().getEngineByName("nashorn");
+        engine.eval(jscript);
+        Invocable invocable = (Invocable) engine;
+        return invocable.invokeFunction(functionName, params).toString();
+    }
 }

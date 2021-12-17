@@ -12,7 +12,7 @@ public class App {
 
     public void main(String[] args) {
         ActorSystem system = ActorSystem.create("js");
-        ActorRef storeActor = system.actorOf(
+        ActorRef actorRouter = system.actorOf(
                 Props.create(
                         new BalancingPool(5).
                                 props(

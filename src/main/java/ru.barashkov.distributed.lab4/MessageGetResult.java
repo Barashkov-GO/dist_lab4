@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class MessageGetResult {
-    private final String Id;
+    private final Integer Id;
 
     public MessageGetResult(
             @JsonProperty("packageId") String packageId) {
-        this.Id = packageId;
+        this.Id = Integer.valueOf(packageId);
     }
 
-    public String getId() {
+    public Integer getId() {
         return this.Id;
     }
 }

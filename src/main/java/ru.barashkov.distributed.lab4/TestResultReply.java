@@ -5,17 +5,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class TestResultReply {
-    private final String Id;
+    private final Integer Id;
     private final ArrayList<TestResult> testResults;
 
     public TestResultReply(
-            @JsonProperty("packageId") String packageId,
-            @JsonProperty("results") ArrayList<TestResult> testResults) {
+            Integer packageId,
+            ArrayList<TestResult> testResults) {
         this.Id = packageId;
         this.testResults = testResults;
     }
 
-    public String getId() {
+    public Integer getId() {
         return this.Id;
     }
 

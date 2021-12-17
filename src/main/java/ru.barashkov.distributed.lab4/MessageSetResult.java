@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class MessageSetResult {
-    private final String Id;
+    private final Integer Id;
     private final TestResult testResult;
 
     public MessageSetResult(
-            String packageId,
+            Integer packageId,
             String testName,
             String expectedResult,
             String actualResult) {
@@ -17,7 +17,7 @@ public class MessageSetResult {
         this.testResult = new TestResult(testName, expectedResult, actualResult);
     }
 
-    public String getId() {
+    public Integer getId() {
         return this.Id;
     }
 

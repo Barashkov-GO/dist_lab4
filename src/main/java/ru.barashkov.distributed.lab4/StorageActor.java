@@ -33,7 +33,7 @@ public class StorageActor extends AbstractActor{
     }
 
     private void setResult(MessageSetResult m) {
-        String packageId = m.getId();
+        Integer packageId = m.getId();
         TestResult testResult = m.getResult();
 
         if (storage.containsKey(packageId)) {
@@ -41,7 +41,7 @@ public class StorageActor extends AbstractActor{
                     add(testResult);
         } else {
             storage.put(
-                    Integer.valueOf(packageId),
+                    packageId,
                     new ArrayList<>(
                             Collections.singleton(testResult)
                     )

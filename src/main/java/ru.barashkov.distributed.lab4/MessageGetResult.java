@@ -14,5 +14,10 @@ public class MessageGetResult {
         this.Id = packageId;
         this.testResults = testResults;
     }
-    
+
+    public String getId() {
+        return this.Id;
+    }
+
+    public 
 }

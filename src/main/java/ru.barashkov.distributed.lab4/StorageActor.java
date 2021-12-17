@@ -20,7 +20,7 @@ public class StorageActor extends AbstractActor{
                 match(
                         MessageGetResult.class,
                         m -> sender().tell(
-                                new TestResult(
+                                new TestResultReply(
                                     m.getId(),
                                     storage.get(m.getId())
                                 ),

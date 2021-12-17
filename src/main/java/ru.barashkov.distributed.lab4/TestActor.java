@@ -1,6 +1,7 @@
 package ru.barashkov.distributed.lab4;
 
 import akka.actor.AbstractActor;
+import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -14,7 +15,7 @@ public class TestActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        
+        return ReceiveBuilder
     }
 
     private String executeJS(String jscript, String functionName, Object[] params)

@@ -9,6 +9,8 @@ public class TestResult {
     private final String expectedResult;
     private final String actualResult;
 
-    public TestResult(@JsonProperty("testName") ) {
+    public TestResult(
+            @JsonProperty("testName") String testName,
+            @JsonProperty("")) {
     }
 }

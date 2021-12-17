@@ -27,6 +27,7 @@ public class TestActor extends AbstractActor {
     private TestResult runTest(String testName, String expectedResult, String jscript, String functionName,
                                Object[] params) throws ScriptException, NoSuchMethodException {
         String executionResult = executeJS(jscript, functionName, params);
+        TestResult testResult = new TestResult(testName, expectedResult, executionResult);
         
 
     }

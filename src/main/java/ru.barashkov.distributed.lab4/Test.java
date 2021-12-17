@@ -10,8 +10,9 @@ public class Test {
     public Test(
             @JsonProperty("testName") String testName,
             @JsonProperty("params") Object[] params,
-            @JsonProperty
-    ){
-
+            @JsonProperty("expectedResult") String expectedResult) {
+        this.testName = testName;
+        this.params = params;
+        this.expectedResult = expectedResult;
     }
 }

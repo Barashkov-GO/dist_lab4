@@ -14,6 +14,10 @@ public class StorageActor extends AbstractActor{
     }
 
     private void setResult(MessageSetResult m) {
-        
+
+    }
+
+    private void getResult(MessageGetResult m) {
+
     }
 }

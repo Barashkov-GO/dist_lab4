@@ -14,7 +14,7 @@ public class App {
         ActorSystem system = ActorSystem.create("js");
         ActorRef storeActor = system.actorOf(
                 Props.create(
-                        new BalancingPool(10).
+                        new BalancingPool(5).
                                 props(
                                         Props.
                                                 create(

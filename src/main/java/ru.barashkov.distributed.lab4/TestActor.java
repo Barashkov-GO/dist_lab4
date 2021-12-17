@@ -21,4 +21,8 @@ public class TestActor extends AbstractActor {
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(functionName, params).toString();
     }
+
+    private TestResult runTest() {
+        
+    }
 }

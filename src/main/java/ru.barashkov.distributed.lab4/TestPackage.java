@@ -6,6 +6,8 @@ public class TestPackage {
     private final Integer packageId;
     private final String jscript;
     private final String funcName;
-    private final ArrayList<Test> 
+    private final ArrayList<Test> tests;
+
+    
 
 }

@@ -3,11 +3,13 @@ package ru.barashkov.distributed.lab4;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class TestResult {
     private final String testName;
     private final String expectedResult;
     private final String actualResult;
+    private final String testStatus;
 
     public TestResult(
             @JsonProperty("testName") String testName,
@@ -16,6 +18,7 @@ public class TestResult {
         this.testName = testName;
         this.expectedResult = expectedResult;
         this.actualResult = actualResult;
+        this.testStatus = Objects.equals(this.expectedResult, this.actualResult) ? "SUCCESS" : "FAILED";
     }
 
     public String getTestName() {
@@ -27,6 +30,10 @@ public class TestResult {
     }
 
     public String getActualResult() {
-        return actualResult;
+        return this.actualResult;
+    }
+
+    public String getTestStatus() {
+        return this.testStatus;
     }
 }

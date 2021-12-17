@@ -1,2 +1,5 @@
-package ru.barashkov.distributed.lab4;public class Test {
+package ru.barashkov.distributed.lab4;
+
+public class Test {
+    private 
 }

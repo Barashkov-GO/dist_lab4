@@ -31,14 +31,15 @@ public class StorageActor extends AbstractActor{
     }
 
     private void setResult(MessageSetResult m) {
-        String Id = (String) m.getId();
-        if (storage.containsKey(Id)) {
-            storage.get(Id).
-                    add(m.getResult());
+        String testId = m.getId();
+        ArrayList<TestResult> testResults = m.getResult();
+        if (storage.containsKey(testId)) {
+            storage.get(testId).
+                    add(testResults);
         } else {
             storage.put(
-                    m.getId(),
-                    m.getResult()
+                    testId,
+                    testResults
             );
         }
     }

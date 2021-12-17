@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String ENGINE = "nashorn";
-    private String testStatus;
 
     @Override
     public Receive createReceive() {

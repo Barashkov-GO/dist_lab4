@@ -20,8 +20,9 @@ public class StorageActor extends AbstractActor{
                         m -> sender().tell(
                                 new MessageGetResult(
                                     m.getId(),
-                                    storage.get()
-                        )).
+                                    storage.get(m.getId())
+                                )
+                        ).
                 build();
     }
 

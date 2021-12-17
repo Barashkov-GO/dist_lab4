@@ -1,5 +1,5 @@
 package ru.barashkov.distributed.lab4;
 
 public class Test {
-    private 
+    private final String 
 }

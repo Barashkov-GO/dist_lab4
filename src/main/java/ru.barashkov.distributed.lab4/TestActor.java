@@ -11,13 +11,13 @@ import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String ENGINE = "nashorn";
-    
+
 
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
             TestPackage.class,
-            m -> sender().tell(
+            m -> StorageActor.tell(
                 runPackage(m),
                 self()
             )

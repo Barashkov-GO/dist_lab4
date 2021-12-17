@@ -11,6 +11,7 @@ public class TestPackage {
     private final ArrayList<Test> tests;
 
     public TestPackage(
+            @JsonProperty("packageId") Integer packageId,
             @JsonProperty
     ) {
 

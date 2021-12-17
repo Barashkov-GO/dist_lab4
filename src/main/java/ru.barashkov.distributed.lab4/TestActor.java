@@ -15,7 +15,8 @@ public class TestActor extends AbstractActor {
     public Receive createReceive() {
     }
 
-    private String executeJS(String jscript, String functionName, Object[] params) throws ScriptException, NoSuchMethodException {
+    private String executeJS(String jscript, String functionName, Object[] params)
+            throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new
                 ScriptEngineManager().getEngineByName(ENGINE);
         engine.eval(jscript);
@@ -23,8 +24,9 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private TestResult runTest(String testName, String expectedResult, String jscript, String functionName, Object[] params) {
-        String executionResult = executeJS()
+    private TestResult runTest(String testName, String expectedResult, String jscript, String functionName,
+                               ArrayList<Integer> params) {
+        String executionResult = executeJS(jscript, functionName, new ArrayList[]{params});
 
     }
 }

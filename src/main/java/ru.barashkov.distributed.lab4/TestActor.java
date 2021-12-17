@@ -18,8 +18,10 @@ public class TestActor extends AbstractActor {
         return ReceiveBuilder.create().match(
             TestPackage.class, m -> sender().tell(
                 runTest(m),
-                self
+                self()
+            )
         )
+        .build();
     }
 
     private String executeJS(String jscript, String functionName, Object[] params)
@@ -31,8 +33,7 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private ArrayList<TestResult> runTest(TestPackage testPackage, String jscript, String functionName,
-                               Object[] params) throws ScriptException, NoSuchMethodException {
+    private ArrayList<TestResult> runTest(TestPackage testPackage) throws ScriptException, NoSuchMethodException {
         ArrayList<TestResult> testResults = new ArrayList<TestResult>();
         for (Test t : TestPackage.getTests()) {
             String executionResult = executeJS(testPackage.getJscript(), testPackage.getFuncName(), t.getParams());

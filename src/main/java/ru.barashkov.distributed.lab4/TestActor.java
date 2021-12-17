@@ -14,6 +14,7 @@ public class TestActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
+        
     }
 
     private String executeJS(String jscript, String functionName, Object[] params)

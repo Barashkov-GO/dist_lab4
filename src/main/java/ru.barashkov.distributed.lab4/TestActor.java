@@ -18,12 +18,11 @@ public class TestActor extends AbstractActor {
         this.StorageActorRef = StorageActorRef;
     }
 
-
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
-            TestPackage.class,
-            m -> runPackage(m)
+                TestPackage.class,
+                this::runPackage
         )
         .build();
     }

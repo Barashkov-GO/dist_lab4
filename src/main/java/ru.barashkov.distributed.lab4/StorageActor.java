@@ -20,7 +20,7 @@ public class StorageActor extends AbstractActor{
         if (storage.containsKey()) {
             storage.get().add(m.getResult)
         } else {
-            
+            storage.put()
         }
     }
 

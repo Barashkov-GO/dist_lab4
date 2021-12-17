@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2269ae35-8b27-4bac-a0f5-f4b21c83cd10" name="Changes" comment="" />
+    <list default="true" id="2269ae35-8b27-4bac-a0f5-f4b21c83cd10" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru.barashkov.distributed.lab4/MessageGetResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru.barashkov.distributed.lab4/MessageGetResult.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +39,9 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="22QAZ0LoVLCAWtmZ2B4aqP8m89g" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

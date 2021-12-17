@@ -13,7 +13,8 @@ public class TestPackage {
     public TestPackage(
             @JsonProperty("packageId") Integer packageId,
             @JsonProperty("jscript") String jscript,
-            @JsonProperty("functionName")
+            @JsonProperty("functionName") String funcName,
+            
     ) {
 
     }

@@ -14,7 +14,7 @@ public class TestPackage {
             @JsonProperty("packageId") Integer packageId,
             @JsonProperty("jscript") String jscript,
             @JsonProperty("functionName") String funcName,
-            @JsonProperty
+            @JsonProperty("test")
     ) {
 
     }

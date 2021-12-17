@@ -19,5 +19,7 @@ public class MessageGetResult {
         return this.Id;
     }
 
-    public 
+    public ArrayList<TestResult> getTestResults() {
+        return this.testResults;
+    }
 }

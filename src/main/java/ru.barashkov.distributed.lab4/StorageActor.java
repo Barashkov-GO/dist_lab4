@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,8 +43,8 @@ public class StorageActor extends AbstractActor{
             storage.put(
                     Integer.valueOf(packageId),
                     new ArrayList<>(
-                            coll
-                    )testResult
+                            Collections.singleton(testResult)
+                    )
             );
         }
     }

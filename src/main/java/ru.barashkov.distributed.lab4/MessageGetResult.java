@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MessageGetResult {
     private final String Id;
-    private final ArrayList<TestResult> testResults
+    private final ArrayList<TestResult> testResults;
     public Object getResult() {
     }
 }

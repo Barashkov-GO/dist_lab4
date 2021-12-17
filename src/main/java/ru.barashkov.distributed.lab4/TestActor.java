@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String ENGINE = "nashorn";
+    private String testStatus;
 
     @Override
     public Receive createReceive() {
@@ -27,6 +28,8 @@ public class TestActor extends AbstractActor {
     private TestResult runTest(String testName, String expectedResult, String jscript, String functionName,
                                Object[] params) throws ScriptException, NoSuchMethodException {
         String executionResult = executeJS(jscript, functionName, params);
-        return new TestResult(testName, expectedResult, executionResult);
+        TestResult testResult = new TestResult(testName, expectedResult, executionResult);
+        this.testStatus = testResult.getTestStatus();
+        return testResult;
     }
 }

@@ -11,6 +11,7 @@ public class MessageSetResult {
     public MessageSetResult(
             String packageId,
             String testName,
+            String expectedResult,
             testResults) {
         this.Id = packageId;
         this.testResult = testResults;

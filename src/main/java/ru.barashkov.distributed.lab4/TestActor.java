@@ -16,8 +16,8 @@ public class TestActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
-            Test.class, m -> sender().tell(
-                runTest(Test)
+            TestResult.class, m -> sender().tell(
+                runTest(TestResult, )
         )
     }
 
@@ -30,10 +30,10 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private TestResult runTest(Test test, String jscript, String functionName,
+    private TestResult runTest(TestResult test, String jscript, String functionName,
                                Object[] params) throws ScriptException, NoSuchMethodException {
         String executionResult = executeJS(jscript, functionName, params);
-        TestResult testResult = new TestResult(test.getName(), test.getExpectedResult(), executionResult);
+        TestResult testResult = new TestResult(test.getTestName(), test.getExpectedResult(), executionResult);
         this.testStatus = testResult.getTestStatus();
         return testResult;
     }

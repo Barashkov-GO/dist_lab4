@@ -8,6 +8,6 @@ public class TestPackage {
     private final String funcName;
     private final ArrayList<Test> tests;
 
-    
+
 
 }

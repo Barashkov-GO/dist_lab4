@@ -31,7 +31,8 @@ public class ActorRouter extends AbstractActor {
                 match(
                         MessageGetResult.class,
                         m -> storageActorRef.tell(
-                                m
+                                m,
+                                sender()
                         )
                 ).
                 match(

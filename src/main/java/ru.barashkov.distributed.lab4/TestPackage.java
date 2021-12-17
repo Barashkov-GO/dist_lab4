@@ -15,9 +15,26 @@ public class TestPackage {
             @JsonProperty("jscript") String jscript,
             @JsonProperty("functionName") String funcName,
             @JsonProperty("tests") ArrayList<Test> tests) {
-            
+        this.funcName = funcName;
+        this.packageId = packageId;
+        this.tests = tests;
+        this.jscript = jscript;
     }
 
 
+    public Integer getPackageId() {
+        return packageId;
+    }
 
+    public String getJscript() {
+        return jscript;
+    }
+
+    public String getFuncName() {
+        return funcName;
+    }
+
+    public ArrayList<Test> getTests() {
+        return tests;
+    }
 }

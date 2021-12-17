@@ -1,2 +1,4 @@
-package ru.barashkov.distributed.lab4;public class MessageGetResult {
+package ru.barashkov.distributed.lab4;
+
+public class MessageGetResult {
 }

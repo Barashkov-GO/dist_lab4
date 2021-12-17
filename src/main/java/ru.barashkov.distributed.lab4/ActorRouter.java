@@ -30,7 +30,7 @@ public class ActorRouter extends AbstractActor {
         return receiveBuilder().
                 match(
                         MessageGetResult.class,
-                        m -> storageActorRef.tell(
+                        m -> Patterns.storageActorRef.tell(
                                 m,
                                 sender()
                         )

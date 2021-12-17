@@ -5,7 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 
 public class ActorRouter extends AbstractActor {
-    private static final 
+    private static final Integer 
     private final ActorRef storageActor;
 
 

@@ -9,8 +9,8 @@ public class TestResultReply {
     private final ArrayList<TestResult> testResults;
 
     public TestResultReply(
-            Integer packageId,
-            ArrayList<TestResult> testResults) {
+            @JsonProperty("packageId") Integer packageId,
+            @JsonProperty("testReArrayList<TestResult> testResults) {
         this.Id = packageId;
         this.testResults = testResults;
     }

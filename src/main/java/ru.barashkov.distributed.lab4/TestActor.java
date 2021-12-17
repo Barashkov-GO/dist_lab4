@@ -1,6 +1,7 @@
 package ru.barashkov.distributed.lab4;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -11,13 +12,14 @@ import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String ENGINE = "nashorn";
+    private final ActorRef StorageActorRef;
 
 
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
             TestPackage.class,
-            m -> StorageActor.tell(
+            m -> StorageActorRef.tell(
                 runPackage(m),
                 self()
             )

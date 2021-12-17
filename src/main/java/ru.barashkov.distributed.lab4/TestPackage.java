@@ -1,5 +1,7 @@
 package ru.barashkov.distributed.lab4;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 
 public class TestPackage {
@@ -8,8 +10,10 @@ public class TestPackage {
     private final String funcName;
     private final ArrayList<Test> tests;
 
-    public TestPackage() {
-        
+    public TestPackage(
+            @JsonProperty
+    ) {
+
     }
 
 

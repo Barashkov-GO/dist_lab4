@@ -12,7 +12,7 @@ public class TestPackage {
 
     public TestPackage(
             @JsonProperty("packageId") Integer packageId,
-            @JsonProperty
+            @JsonProperty("jscript") String 
     ) {
 
     }

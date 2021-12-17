@@ -10,7 +10,7 @@ public class Test {
     public Test(
             @JsonProperty("testName") String testName,
             @JsonProperty("params") Object[] params,
-            
+            @JsonProperty
     ){
 
     }

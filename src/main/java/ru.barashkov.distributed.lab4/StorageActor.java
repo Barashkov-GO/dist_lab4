@@ -1,2 +1,4 @@
-package ru.barashkov.distributed.lab4;public class StorageActor {
+package ru.barashkov.distributed.lab4;
+
+public class StorageActor {
 }

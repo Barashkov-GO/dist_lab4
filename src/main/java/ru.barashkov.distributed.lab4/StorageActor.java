@@ -13,10 +13,12 @@ public class StorageActor extends AbstractActor{
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().
-                match(MessageSetResult.class,
+                match(
+                        MessageSetResult.class,
                         m -> setResult(m)
                 ).
-                match(MessageGetResult.class,
+                match(
+                        MessageGetResult.class,
                         m -> sender().tell(
                                 new MessageGetResult(
                                     m.getId(),

@@ -8,6 +8,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class TestActor extends AbstractActor {
+    private final static String ENGINE = "nashorn";
 
     @Override
     public Receive createReceive() {
@@ -15,7 +16,7 @@ public class TestActor extends AbstractActor {
 
     private String executeJS(String jscript, String functionName, Object[] params) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new
-                ScriptEngineManager().getEngineByName("nashorn");
+                ScriptEngineManager().getEngineByName(ENGINE);
         engine.eval(jscript);
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(functionName, params).toString();

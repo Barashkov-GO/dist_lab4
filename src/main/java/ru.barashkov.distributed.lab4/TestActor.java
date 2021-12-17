@@ -17,9 +17,7 @@ public class TestActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
             Test.class, m -> sender().tell(
-                    new StorageActor(
-                            
-                    )
+                    
         )
     }
 

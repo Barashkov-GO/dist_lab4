@@ -12,6 +12,6 @@ public class TestResult {
     public TestResult(
             @JsonProperty("testName") String testName,
             @JsonProperty("expectedResult") String expectedResult,
-            @JsonProperty("")) {
+            @JsonProperty("actualResult") String actualResult) {
     }
 }

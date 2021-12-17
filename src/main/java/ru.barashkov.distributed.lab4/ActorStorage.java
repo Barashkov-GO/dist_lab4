@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StorageActor extends AbstractActor{
+public class ActorStorage extends AbstractActor{
 
     private final Map<Integer, ArrayList<TestResult>> storage = new HashMap<>();
 

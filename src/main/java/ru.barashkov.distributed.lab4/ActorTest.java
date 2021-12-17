@@ -8,13 +8,12 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import java.util.ArrayList;
 
-public class TestActor extends AbstractActor {
+public class ActorTest extends AbstractActor {
     private final static String ENGINE = "nashorn";
     private final ActorRef StorageActorRef;
 
-    public TestActor(ActorRef StorageActorRef) {
+    public ActorTest(ActorRef StorageActorRef) {
         this.StorageActorRef = StorageActorRef;
     }
 

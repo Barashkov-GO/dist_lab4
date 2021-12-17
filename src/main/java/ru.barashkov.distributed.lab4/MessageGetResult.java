@@ -5,6 +5,6 @@ import java.util.ArrayList;
 public class MessageGetResult {
     private final String Id;
     private final ArrayList<TestResult> testResults;
-    public getResult(@JsonProperty("packageId")) {
+    public getResult(@JsonProperty("packageId") String packageId, @JsonProperty) {
     }
 }

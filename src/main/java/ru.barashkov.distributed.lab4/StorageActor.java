@@ -31,7 +31,7 @@ public class StorageActor extends AbstractActor{
     }
 
     private void setResult(MessageSetResult m) {
-        if (storage.containsKey()) {
+        if (storage.containsKey(m.getId())) {
             storage.get().
                     add(m.getResult());
         } else {

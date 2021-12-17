@@ -7,7 +7,7 @@ public class ActorRouter extends AbstractActor {
     private final ActorRef storageActor;
 
     public ActorRouter() {
-        this.storageActor =  
+        this.storageActor = getContext().
     }
     @Override
     public Receive createReceive() {

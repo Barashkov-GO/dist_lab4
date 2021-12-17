@@ -8,6 +8,7 @@ public class MessageGetResult {
     public getResult(
             @JsonProperty("packageId") String packageId,
             @JsonProperty("results") ArrayList<TestResult> testResults) {
-        
+        this.Id = packageId;
+        this.testResults = testResults;
     }
 }

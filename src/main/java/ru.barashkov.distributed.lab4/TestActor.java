@@ -7,7 +7,6 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String ENGINE = "nashorn";
@@ -16,8 +15,8 @@ public class TestActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
-            Test.class, m -> sender().tell(
-                runTest(Test)
+            TestPackage.class, m -> sender().tell(
+                runTest(TestPackage)
         )
     }
 
@@ -30,7 +29,7 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private TestResult runTest(Test test, String jscript, String functionName,
+    private TestResult runTest(TestPackage test, String jscript, String functionName,
                                Object[] params) throws ScriptException, NoSuchMethodException {
         String executionResult = executeJS(jscript, functionName, params);
         TestResult testResult = new TestResult(test.getTestName(), test.getExpectedResult(), executionResult);

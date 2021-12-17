@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class TestResult {
     private final String testName;
     private final String expectedResult;
-    private final String 
+    private final String actualResult;
+    
     public TestResult(String id, ArrayList<TestResult> testResults) {
     }
 }

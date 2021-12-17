@@ -16,7 +16,7 @@ public class TestActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
             TestPackage.class, m -> sender().tell(
-                runTest(m),
+                runPackage(m),
                 self()
             )
         )
@@ -32,7 +32,7 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private ArrayList<TestResult> runTest(TestPackage testPackage) throws ScriptException, NoSuchMethodException {
+    private ArrayList<TestResult> runPackage(TestPackage testPackage) throws ScriptException, NoSuchMethodException {
         ArrayList<TestResult> testResults = new ArrayList<TestResult>();
         for (Test t : TestPackage.getTests()) {
             String executionResult = executeJS(testPackage.getJscript(), testPackage.getFuncName(), t.getParams());

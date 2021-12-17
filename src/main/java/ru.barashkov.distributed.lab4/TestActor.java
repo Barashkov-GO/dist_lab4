@@ -50,7 +50,8 @@ public class TestActor extends AbstractActor {
                             t.getTestName(),
                             t.getExpectedResult(),
                             executionResult
-                    )
+                    ),
+                    self()
             );
         }
     }

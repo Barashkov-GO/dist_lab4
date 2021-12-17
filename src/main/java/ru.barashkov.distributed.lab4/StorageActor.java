@@ -33,7 +33,7 @@ public class StorageActor extends AbstractActor{
     }
 
     private void setResult(MessageSetResult m) {
-        Integer packageId = m.getId();
+        Integer packageId = m.getPackageId();
         TestResult testResult = m.getResult();
 
         if (storage.containsKey(packageId)) {

@@ -13,5 +13,9 @@ public class TestResult {
             @JsonProperty("testName") String testName,
             @JsonProperty("expectedResult") String expectedResult,
             @JsonProperty("actualResult") String actualResult) {
+        this.testName = testName;
+        this.expectedResult = expectedResult;
+        this.actualResult = actualResult;
     }
+    
 }

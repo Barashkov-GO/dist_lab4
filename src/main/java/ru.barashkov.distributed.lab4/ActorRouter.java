@@ -31,7 +31,7 @@ public class ActorRouter extends AbstractActor {
         return receiveBuilder().
                 match(
                         MessageGetResult.class,
-                        
+                        m -> 
                 ).
                 match(
 

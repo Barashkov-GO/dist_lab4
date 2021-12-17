@@ -17,7 +17,7 @@ public class TestActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
             TestPackage.class, m -> sender().tell(
-                runTest(TestPackage),
+                runTest(m, ),
                 self
         )
     }

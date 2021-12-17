@@ -1,6 +1,7 @@
 package ru.barashkov.distributed.lab4;
 
 public class Test {
-    private final String packageId;
+    private final Integer packageId;
     
+
 }

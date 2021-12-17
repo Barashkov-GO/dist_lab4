@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class MessageSetResult {
     private final String Id;
-    private final ArrayList<TestResult> testResults;
+    private final TestResult testResult;
 
     public MessageSetResult(
             @JsonProperty("packageId") String packageId,
             @JsonProperty("results") ArrayList<TestResult> testResults) {
         this.Id = packageId;
-        this.testResults = testResults;
+        this.testResult = testResults;
     }
 
     public String getId() {
@@ -20,6 +20,6 @@ public class MessageSetResult {
     }
 
     public ArrayList<TestResult> getResults() {
-        return this.testResults;
+        return this.testResult;
     }
 }

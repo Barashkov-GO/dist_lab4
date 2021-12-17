@@ -10,7 +10,7 @@ public class TestResultReply {
 
     public TestResultReply(
             @JsonProperty("packageId") Integer packageId,
-            @JsonProperty("testReArrayList<TestResult> testResults) {
+            @JsonProperty("testResults") ArrayList<TestResult> testResults) {
         this.Id = packageId;
         this.testResults = testResults;
     }

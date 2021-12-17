@@ -12,7 +12,7 @@ public class StorageActor extends AbstractActor{
     public Receive createReceive() {
         return ReceiveBuilder.create().
                 match(MessageSetResult.class, setResult).
-                match(MessageGetResult, m -> sender().tell(getResult())).
+                match(MessageGetResult, m -> sender().tell(m.getResult())).
                 build();
     }
 

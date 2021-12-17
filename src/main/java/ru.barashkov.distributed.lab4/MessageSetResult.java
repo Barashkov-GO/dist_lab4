@@ -12,7 +12,7 @@ public class MessageSetResult {
             String packageId,
             String testName,
             String expectedResult,
-            testResults) {
+            String actualResult) {
         this.Id = packageId;
         this.testResult = testResults;
     }

@@ -13,5 +13,7 @@ public class StorageActor extends AbstractActor{
         return ReceiveBuilder.create().match(MessageSetResult.class, setResult)
     }
 
-    private void setResult(MessageSetResult)
+    private void setResult(MessageSetResult m) {
+        
+    }
 }

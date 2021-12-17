@@ -14,6 +14,10 @@ public class TestActor extends AbstractActor {
     private final static String ENGINE = "nashorn";
     private final ActorRef StorageActorRef;
 
+    public TestActor(ActorRef StorageActorRef) {
+        this.StorageActorRef = StorageActorRef;
+    }
+
 
     @Override
     public Receive createReceive() {

@@ -4,6 +4,6 @@ public class Test {
     private final Integer packageId;
     private final String jscript;
     private final String funcName;
-    
+    private final 
 
 }

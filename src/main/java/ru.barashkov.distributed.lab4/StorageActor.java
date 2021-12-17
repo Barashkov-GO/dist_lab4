@@ -10,6 +10,8 @@ public class StorageActor extends AbstractActor{
     private Map<Integer, ArrayList<TestResult>> storage = new HashMap<>();
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create().match(MessageSetResult.class, )
+        return ReceiveBuilder.create().match(MessageSetResult.class, setResult)
     }
+
+    
 }

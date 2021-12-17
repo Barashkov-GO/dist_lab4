@@ -8,6 +8,7 @@ import static java.security.AccessController.getContext;
 public class App {
 
     public void main(String[] args) {
+        ActorRef actorRouter = 
         testPerformerActor = getContext().actorOf(
                 new RoundRobinPool(5)
                         .withSupervisorStrategy(strategy)

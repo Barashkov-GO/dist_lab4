@@ -13,7 +13,16 @@ public class App {
     public void main(String[] args) {
         ActorSystem system = ActorSystem.create("js");
         ActorRef storeActor = system.actorOf(
-                Props.create(new BalancingPool(10).props(Props.create(ActorStorage.class, )))
+                Props.create(
+                        new BalancingPool(10).
+                                props(
+                                        Props.
+                                                create(
+                                                        ActorStorage.class,
+                                                        ActorTest.class
+                                                )
+                                )
+                )
         );
         ActorRef actorRouter =
         testPerformerActor = getContext().actorOf(

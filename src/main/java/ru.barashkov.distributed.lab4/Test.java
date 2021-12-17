@@ -8,7 +8,7 @@ public class Test {
     private final String expectedResult;
 
     public Test(
-            @JsonProperty
+            @JsonProperty("testName") 
     ){
 
     }

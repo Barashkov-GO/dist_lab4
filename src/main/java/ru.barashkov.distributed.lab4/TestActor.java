@@ -34,7 +34,7 @@ public class TestActor extends AbstractActor {
                                Object[] params) throws ScriptException, NoSuchMethodException {
         String executionResult = executeJS(jscript, functionName, params);
         ArrayList<TestResult> testResults = new ArrayList<TestResult>();
-        for (int i = 0; i < testPackage.getTests(); i++) {
+        for (Test t :) {
             Test t =
             testResults.add(TestResult(test.getTestName(), test.getExpectedResult(), executionResult));
         }

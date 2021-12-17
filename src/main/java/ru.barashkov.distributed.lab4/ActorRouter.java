@@ -29,7 +29,9 @@ public class ActorRouter extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder().
-                match()
+                match().
+                match().
+                build()
 
     }
 }

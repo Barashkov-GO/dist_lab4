@@ -9,7 +9,7 @@ public class MessageSetResult {
     private final TestResult testResult;
 
     public MessageSetResult(
-            @JsonProperty("packageId") String packageId,
+            String packageId,
             @JsonProperty("results") ArrayList<TestResult> testResults) {
         this.Id = packageId;
         this.testResult = testResults;

@@ -3,6 +3,7 @@ package ru.barashkov.distributed.lab4;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.pattern.Patterns;
 import akka.routing.BalancingRoutingLogic;
 import akka.routing.Routee;
 import akka.routing.Router;
@@ -30,7 +31,8 @@ public class ActorRouter extends AbstractActor {
         return receiveBuilder().
                 match(
                         MessageGetResult.class,
-                        m -> Patterns.storageActorRef.tell(
+                        m -> Patterns.ask(
+                                storageActorRef.tell(
                                 m,
                                 sender()
                         )

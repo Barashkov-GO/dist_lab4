@@ -36,8 +36,18 @@ public class TestActor extends AbstractActor {
     private ArrayList<TestResult> runPackage(TestPackage testPackage) throws ScriptException, NoSuchMethodException {
         ArrayList<TestResult> packageResult = new ArrayList<>();
         for (Test t : TestPackage.getTests()) {
-            String executionResult = executeJS(testPackage.getJscript(), testPackage.getFuncName(), t.getParams());
-            packageResult.add(new TestResult(t.getTestName(), t.getExpectedResult(), executionResult));
+            String executionResult = executeJS(
+                    testPackage.getJscript(),
+                    testPackage.getFuncName(),
+                    t.getParams()
+            );
+            packageResult.add(
+                    new TestResult(
+                            t.getTestName(),
+                            t.getExpectedResult(),
+                            executionResult
+                    )
+            );
         }
         return packageResult;
     }

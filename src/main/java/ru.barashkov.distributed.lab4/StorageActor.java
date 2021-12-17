@@ -5,7 +5,7 @@ import akka.japi.pf.ReceiveBuilder;
 
 public class StorageActor extends AbstractActor{
 
-    private Map<Integer, ArrayList<>>
+    private Map<Integer, ArrayList<TestResult>>
     @Override
     public Receive createReceive() {
         return null;

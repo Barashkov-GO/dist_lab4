@@ -10,12 +10,13 @@ import java.util.Map;
 public class StorageActor extends AbstractActor{
 
     private Map<Integer, ArrayList<TestResult>> storage = new HashMap<>();
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().
                 match(
                         MessageSetResult.class,
-                        m -> setResult(m)
+                        this::setResult
                 ).
                 match(
                         MessageGetResult.class,
@@ -32,13 +33,14 @@ public class StorageActor extends AbstractActor{
 
     private void setResult(MessageSetResult m) {
         String packageId = m.getId();
-        ArrayList<TestResult> testResults = m.getResult();
+        ArrayList<TestResult> testResults = m.getResults();
+
         if (storage.containsKey(packageId)) {
             storage.get(packageId).
                     add(testResults);
         } else {
             storage.put(
-                    packageId,
+                    Integer.valueOf(packageId),
                     testResults
             );
         }

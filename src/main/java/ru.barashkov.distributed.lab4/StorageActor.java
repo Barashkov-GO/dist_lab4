@@ -22,8 +22,9 @@ public class StorageActor extends AbstractActor{
                                     m.getId(),
                                     storage.get(m.getId())
                                 ),
-                                self
-                        ).
+                                self()
+                        )
+                ).
                 build();
     }
 

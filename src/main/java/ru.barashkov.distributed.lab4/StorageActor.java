@@ -1,5 +1,5 @@
 package ru.barashkov.distributed.lab4;
 
-public class StorageActor {
-    
+public class StorageActor extends AbstractActor{
+
 }

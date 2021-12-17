@@ -5,11 +5,13 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 
 public class ActorRouter extends AbstractActor {
+    private static final 
     private final ActorRef storageActor;
+
 
     public ActorRouter() {
         this.storageActor = getContext().actorOf(Props.create(ActorStorage.class));
-        
+
     }
     @Override
     public Receive createReceive() {

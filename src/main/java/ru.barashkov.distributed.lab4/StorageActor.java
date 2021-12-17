@@ -22,7 +22,7 @@ public class StorageActor extends AbstractActor{
                     add(m.getResult)
         } else {
             storage.put(
-                    
+
             )
         }
     }

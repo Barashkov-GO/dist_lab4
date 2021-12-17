@@ -14,14 +14,14 @@ public class MessageSetResult {
             String expectedResult,
             String actualResult) {
         this.Id = packageId;
-        this.testResult = new testResult(;
+        this.testResult = new TestResult(testName, expectedResult, actualResult);
     }
 
     public String getId() {
         return this.Id;
     }
 
-    public ArrayList<TestResult> getResults() {
+    public TestResult getResult() {
         return this.testResult;
     }
 }

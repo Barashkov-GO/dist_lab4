@@ -33,15 +33,15 @@ public class StorageActor extends AbstractActor{
 
     private void setResult(MessageSetResult m) {
         String packageId = m.getId();
-        ArrayList<TestResult> testResults = m.getResults();
+        TestResult testResult = m.getResult();
 
         if (storage.containsKey(packageId)) {
             storage.get(packageId).
-                    add(testResults);
+                    add(testResult);
         } else {
             storage.put(
                     Integer.valueOf(packageId),
-                    testResults
+                    testResult
             );
         }
     }

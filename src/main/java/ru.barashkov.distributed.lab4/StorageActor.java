@@ -41,7 +41,7 @@ public class StorageActor extends AbstractActor{
         } else {
             storage.put(
                     Integer.valueOf(packageId),
-                    testResult
+                    new ArrayList<>()testResult
             );
         }
     }

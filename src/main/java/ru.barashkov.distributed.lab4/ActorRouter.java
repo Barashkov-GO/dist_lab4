@@ -23,9 +23,9 @@ public class ActorRouter extends AbstractActor {
         for (int i = 0; i < TEST_ACTORS_AMOUNT; i++) {
             actors.add(getContext().actorOf(Props.create(ActorTest.class)));
         }
-        router = new Router(new BalancingRoutingLogic(), actors);
+        this.router = new Router(new BalancingRoutingLogic(), actors);
     }
-    
+
     @Override
     public Receive createReceive() {
 

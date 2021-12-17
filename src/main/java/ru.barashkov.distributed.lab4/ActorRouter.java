@@ -8,7 +8,7 @@ public class ActorRouter extends AbstractActor {
     private final ActorRef storageActor;
 
     public ActorRouter() {
-        this.storageActor = getContext().actorOf(Props.create())
+        this.storageActor = getContext().actorOf(Props.create(ActorStorage))
     }
     @Override
     public Receive createReceive() {

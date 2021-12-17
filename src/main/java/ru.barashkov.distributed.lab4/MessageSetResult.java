@@ -10,7 +10,8 @@ public class MessageSetResult {
 
     public MessageSetResult(
             String packageId,
-            @JsonProperty("results") ArrayList<TestResult> testResults) {
+            String testName,
+            testResults) {
         this.Id = packageId;
         this.testResult = testResults;
     }

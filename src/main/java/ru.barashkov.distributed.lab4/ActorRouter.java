@@ -18,8 +18,8 @@ public class ActorRouter extends AbstractActor {
 
 
     public ActorRouter() {
-        ArrayList<Routee> actors = new ArrayList<>();
         this.storageActor = getContext().actorOf(Props.create(ActorStorage.class));
+        ArrayList<Routee> actors = new ArrayList<>();
         for (int i = 0; i < TEST_ACTORS_AMOUNT; i++) {
             actors.add(getContext().actorOf(Props.create(ActorTest.class)));
         }
@@ -30,7 +30,7 @@ public class ActorRouter extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder().
                 match(
-                        
+
                 ).
                 match().
                 build();

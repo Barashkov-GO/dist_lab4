@@ -17,5 +17,16 @@ public class TestResult {
         this.expectedResult = expectedResult;
         this.actualResult = actualResult;
     }
-    
+
+    public String getTestName() {
+        return this.testName;
+    }
+
+    public String getExpectedResult() {
+        return this.expectedResult;
+    }
+
+    public String getActualResult() {
+        return actualResult;
+    }
 }

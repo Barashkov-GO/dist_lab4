@@ -21,7 +21,8 @@ public class StorageActor extends AbstractActor{
                                 new MessageGetResult(
                                     m.getId(),
                                     storage.get(m.getId())
-                                )
+                                ),
+                                self
                         ).
                 build();
     }

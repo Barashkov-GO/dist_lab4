@@ -3,6 +3,8 @@ package ru.barashkov.distributed.lab4;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.routing.RoutedActorCell;
+import akka.routing.Router;
 
 import java.util.ArrayList;
 
@@ -17,7 +19,7 @@ public class ActorRouter extends AbstractActor {
         for (int i = 0; i < TEST_ACTORS_AMOUNT; i++) {
             actors.add(getContext().actorOf(Props.create(ActorTest.class)));
         }
-        
+        router = new Router()
 
     }
     @Override

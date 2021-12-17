@@ -22,7 +22,7 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private TestResult runTest() {
-        
+    private TestResult runTest(String testName, ) {
+
     }
 }

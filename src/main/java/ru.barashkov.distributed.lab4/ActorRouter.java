@@ -37,7 +37,7 @@ public class ActorRouter extends AbstractActor {
                         )
                 ).
                 match(
-                        MessageSetResult.class,
+                        Message.class,
                 ).
                 build();
     }

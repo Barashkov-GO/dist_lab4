@@ -8,7 +8,7 @@ public class TestPackage {
     private final Integer packageId;
     private final String jscript;
     private final String funcName;
-    private final ArrayList<Test> tests;
+    private static ArrayList<Test> tests;
 
     public TestPackage(
             @JsonProperty("packageId") Integer packageId,
@@ -34,7 +34,7 @@ public class TestPackage {
         return funcName;
     }
 
-    public ArrayList<Test> getTests() {
+    public static ArrayList<Test> getTests() {
         return tests;
     }
 }

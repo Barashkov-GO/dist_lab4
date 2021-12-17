@@ -30,15 +30,13 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private TestResult runTest(TestPackage testPackage, String jscript, String functionName,
+    private ArrayList<TestResult> runTest(TestPackage testPackage, String jscript, String functionName,
                                Object[] params) throws ScriptException, NoSuchMethodException {
         String executionResult = executeJS(jscript, functionName, params);
         ArrayList<TestResult> testResults = new ArrayList<TestResult>();
-        for (Test t :) {
-            Test t =
-            testResults.add(TestResult(test.getTestName(), test.getExpectedResult(), executionResult));
+        for (Test t : TestPackage.getTests()) {
+            testResults.add(new TestResult(t.getTestName(), t.getExpectedResult(), executionResult));
         }
-        this.testStatus = testResult.getTestStatus();
-        return testResult;
+        return testResults;
     }
 }

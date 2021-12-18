@@ -42,7 +42,10 @@ public class TestPackage {
 
     @Override
     public String toString() {
-        String out;
-        out += "Package id:" + packageId.toString();
+        String out = "Package id: " + packageId.toString() + "\tFunction name: " + funcName + "\n\ttests:\n";
+        for (Test t : tests) {
+            out += t.toString();
+        }
+        return out;
     }
 }

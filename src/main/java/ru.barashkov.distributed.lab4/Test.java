@@ -27,4 +27,8 @@ public class Test {
     public String getExpectedResult() {
         return expectedResult;
     }
+
+    public String toString() {
+        return "Test name: " + testName + "\tExpected result: " + expectedResult + "\n";
+    }
 }

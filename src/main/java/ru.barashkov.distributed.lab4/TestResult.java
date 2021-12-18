@@ -10,14 +10,11 @@ public class TestResult {
     private final String expectedResult;
     private final String actualResult;
     private final String testStatus;
-//    private final Integer packageId;
 
     public TestResult(
-//            @JsonProperty("packageId") Integer packageId,
             @JsonProperty("testName") String testName,
             @JsonProperty("expectedResult") String expectedResult,
             @JsonProperty("actualResult") String actualResult) {
-//        this.packageId = packageId;
         this.testName = testName;
         this.expectedResult = expectedResult;
         this.actualResult = actualResult;

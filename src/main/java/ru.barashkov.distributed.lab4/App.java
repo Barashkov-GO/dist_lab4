@@ -38,7 +38,7 @@ public class App {
                 actorMaterializer
         );
         System.in.read();
-        binding.thenCompose
+        binding.thenCompose(ServerBinding::unbind).acceptEither()
 
     }
 }

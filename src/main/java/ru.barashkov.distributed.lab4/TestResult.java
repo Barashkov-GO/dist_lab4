@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class TestResult {
+    private final static String SUCCESS_STR = "SUCCESS";
+    private final static String FAIL_STR = "FAILED";
     private final String testName;
     private final String expectedResult;
     private final String actualResult;
@@ -18,7 +20,7 @@ public class TestResult {
         this.testName = testName;
         this.expectedResult = expectedResult;
         this.actualResult = actualResult;
-        this.testStatus = Objects.equals(this.expectedResult, this.actualResult) ? "SUCCESS" : "FAILED";
+        this.testStatus = Objects.equals(this.expectedResult, this.actualResult) ? SUCCESS_STR : FAIL_STR;
     }
 
     public String getTestName() {

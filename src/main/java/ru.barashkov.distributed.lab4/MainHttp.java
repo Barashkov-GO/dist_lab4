@@ -39,9 +39,8 @@ public class MainHttp {
                                         return completeOKWithFuture(res, Jackson.marshaller());
                                     }
                             )
-                    )
-                ),
-                path("put", () ->
+                    ),
+//                path("put", () ->
                     post(
                             () -> entity(
                                     Jackson.unmarshaller(TestPackage.class),
@@ -51,7 +50,6 @@ public class MainHttp {
                                     }
                             )
                     )
-                )
         );
     }
 }

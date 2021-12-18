@@ -19,6 +19,9 @@ import java.util.concurrent.CompletionStage;
 import static java.security.AccessController.getContext;
 
 public class App {
+    private final static String SYSTEM_NAME = "js";
+    private final static String SERVER_IP = "localhost";
+    private final static Integer SERVER_PORT = 8080;
 
     public void main(String[] args) {
         ActorSystem system = ActorSystem.create("js");

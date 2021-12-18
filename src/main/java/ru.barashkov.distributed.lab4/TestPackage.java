@@ -41,5 +41,8 @@ public class TestPackage {
     }
 
     @Override
-    public String 
+    public String toString() {
+        String out;
+        out += "Package id:" + packageId.toString();
+    }
 }

@@ -24,7 +24,7 @@ public class App {
     private final static Integer SERVER_PORT = 8080;
 
     public void main(String[] args) {
-        ActorSystem system = ActorSystem.create("js");
+        ActorSystem system = ActorSystem.create(SYSTEM_NAME);
         ActorRef actorRouter = system.actorOf(Props.create(ActorRouter.class));
         final Http http = Http.get(system);
         ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
@@ -32,7 +32,7 @@ public class App {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.getRoute().flow(system, actorMaterializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost(SERVER_IP, SERVER_PORT),
                 actorMaterializer
         );
     }

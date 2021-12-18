@@ -1,6 +1,7 @@
 package ru.barashkov.distributed.lab4;
 
 import akka.actor.ActorRef;
+//import akka.scala.Serializable;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;

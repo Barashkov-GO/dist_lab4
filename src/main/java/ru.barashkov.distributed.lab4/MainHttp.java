@@ -8,11 +8,13 @@ import akka.pattern.Patterns;
 import akka.routing.Routee;
 import static akka.http.javadsl.server.Directives.*;
 
+import java.time.Duration;
 import java.util.concurrent.Future;
 
 public class MainHttp {
     private final static String PACKAGE_ID_STR = "packageId";
     private final static String TESTING_STR = "Start testing...\n";
+    private final static Duration TIME_OUT = Duration.ofSeconds(5);
 
     private ActorRef actorRouter;
 
@@ -27,9 +29,10 @@ public class MainHttp {
                             () -> parameter(
                                     PACKAGE_ID_STR,
                                     (m) -> {
-                                        Future<Object> res = Patterns.ask(
+                                        Future<Object> res = (Future<Object>) Patterns.ask(
                                                 actorRouter,
-                                                new MessageGetResult(m)
+                                                new MessageGetResult(m),
+                                                TIME_OUT
                                         );
                                         return completeOKWithFuture(res, Jackson.marshaller());
                                     }

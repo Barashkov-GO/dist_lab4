@@ -26,7 +26,7 @@ public class MainHttp {
 
     public Route getRoute() {
         return route(
-                path("test", () ->
+//                path("test", () ->
                     get(
                             () -> parameter(
                                     PACKAGE_ID_STR,

@@ -31,7 +31,7 @@ public class MainHttp {
                                                 actorRouter,
                                                 new MessageGetResult(m)
                                         );
-                                        return completeOKWithFuture(res);
+                                        return completeOKWithFuture(res, Jackson.marshaller());
                                     }
                             )
                     )

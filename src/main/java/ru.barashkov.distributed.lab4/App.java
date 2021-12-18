@@ -38,7 +38,7 @@ public class App {
                 actorMaterializer
         );
         System.in.read();
-        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate())
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
 
     }
 }

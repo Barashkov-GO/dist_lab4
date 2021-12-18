@@ -36,6 +36,6 @@ public class App {
                 ConnectHttp.toHost(SERVER_IP, SERVER_PORT),
                 actorMaterializer
         );
-        
+        System.in.read()
     }
 }

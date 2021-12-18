@@ -20,6 +20,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import scala.concurrent.Future;
 
+import java.util.concurrent.CompletionStage;
+
 import static java.security.AccessController.getContext;
 
 public class App {

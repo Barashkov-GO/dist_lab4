@@ -14,10 +14,10 @@ public class MainHttp {
     private final static String PACKAGE_ID_STR = "packageId";
     private final static String TESTING_STR = "Start testing...\n";
 
-    private ActorSystem system;
+    private ActorRef actorRouter;
 
-    public MainHttp(ActorSystem system) {
-        this.system = system;
+    public MainHttp(ActorRef actorRouter) {
+        this.actorRouter = actorRouter;
     }
 
     public Route getRoute() {
@@ -28,10 +28,10 @@ public class MainHttp {
                                     PACKAGE_ID_STR,
                                     (m) -> {
                                         Future<Object> res = Patterns.ask(
-                                                ActorStorage.class,
-                                                new MessageGetResult(Integer.parseInt(m))
+                                                actorRouter,
+                                                new MessageGetResult(m)
                                         );
-                                        return res;
+                                        return completeOKWithFuture(res);
                                     }
                             )
                     )

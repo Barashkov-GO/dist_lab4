@@ -1,17 +1,13 @@
 package ru.barashkov.distributed.lab4;
 
 import akka.actor.ActorRef;
-//import akka.scala.Serializable;
-import akka.actor.ActorSystem;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
-import akka.routing.Routee;
 import static akka.http.javadsl.server.Directives.*;
 
 import java.time.Duration;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.Future;
 
 public class MainHttp {
     private final static String PACKAGE_ID_STR = "packageId";
@@ -26,7 +22,6 @@ public class MainHttp {
 
     public Route getRoute() {
         return route(
-//                path("test", () ->
                     get(
                             () -> parameter(
                                     PACKAGE_ID_STR,
@@ -40,7 +35,6 @@ public class MainHttp {
                                     }
                             )
                     ),
-//                path("put", () ->
                     post(
                             () -> entity(
                                     Jackson.unmarshaller(TestPackage.class),

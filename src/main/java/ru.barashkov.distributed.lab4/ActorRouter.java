@@ -3,7 +3,6 @@ package ru.barashkov.distributed.lab4;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
-import akka.pattern.Patterns;
 import akka.routing.ActorRefRoutee;
 import akka.routing.BalancingRoutingLogic;
 import akka.routing.Routee;

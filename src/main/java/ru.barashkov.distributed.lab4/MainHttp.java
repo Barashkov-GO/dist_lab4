@@ -9,6 +9,7 @@ import akka.routing.Routee;
 import static akka.http.javadsl.server.Directives.*;
 
 import java.time.Duration;
+import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 
 public class MainHttp {
@@ -29,7 +30,7 @@ public class MainHttp {
                             () -> parameter(
                                     PACKAGE_ID_STR,
                                     (m) -> {
-                                        Future<Object> res = (Future<Object>) Patterns.ask(
+                                        CompletionStage<Object> res = Patterns.ask(
                                                 actorRouter,
                                                 new MessageGetResult(m),
                                                 TIME_OUT
@@ -44,7 +45,7 @@ public class MainHttp {
                             () -> entity(
                                     Jackson.unmarshaller(TestPackage.class),
                                     m -> {
-                                            ActorTest.tell(m, ActorRef.noSender());
+                                            actorRouter.tell(m, ActorRef.noSender();
                                             return complete(TESTING_STR);
                                     }
                             )

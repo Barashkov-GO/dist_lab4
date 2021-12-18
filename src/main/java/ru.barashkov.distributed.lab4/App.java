@@ -23,7 +23,7 @@ public class App {
     private final static String SERVER_IP = "localhost";
     private final static Integer SERVER_PORT = 8080;
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         ActorSystem system = ActorSystem.create(SYSTEM_NAME);
         ActorRef actorRouter = system.actorOf(Props.create(ActorRouter.class));
         final Http http = Http.get(system);

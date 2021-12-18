@@ -20,5 +20,6 @@
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-http-core_2.12:10.1.10" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-http_2.12:10.1.10" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-http-jackson_2.12:10.1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.12.8" level="project" />
   </component>
 </module>

@@ -38,7 +38,7 @@ public class App {
                 actorMaterializer
         );
         System.in.read();
-        binding.
+        binding.thenCompose
 
     }
 }

@@ -11,8 +11,6 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import scala.concurrent.Future;
 
 import java.io.IOException;
@@ -27,6 +25,7 @@ public class App {
     public static void main(String[] args) throws IOException {
         ActorSystem actorSystem = ActorSystem.create(SYSTEM_NAME);
         ActorRef actorRouter = actorSystem.actorOf(Props.create(ActorRouter.class));
+
         final Http http = Http.get(actorSystem);
         ActorMaterializer actorMaterializer = ActorMaterializer.create(actorSystem);
         MainHttp instance = new MainHttp(actorRouter);

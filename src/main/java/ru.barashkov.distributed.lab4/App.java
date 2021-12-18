@@ -26,19 +26,19 @@ public class App {
     private final static Integer SERVER_PORT = 8080;
 
     public static void main(String[] args) throws IOException {
-        ActorSystem system = ActorSystem.create(SYSTEM_NAME);
-        ActorRef actorRouter = system.actorOf(Props.create(ActorRouter.class));
-        final Http http = Http.get(system);
-        ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
+        ActorSystem actorSystem = ActorSystem.create(SYSTEM_NAME);
+        ActorRef actorRouter = actorSystem.actorOf(Props.create(ActorRouter.class));
+        final Http http = Http.get(actorSystem);
+        ActorMaterializer actorMaterializer = ActorMaterializer.create(actorSystem);
         MainHttp instance = new MainHttp(actorRouter);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.getRoute().flow(system, actorMaterializer);
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.getRoute().flow(actorSystem, actorMaterializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(SERVER_IP, SERVER_PORT),
                 actorMaterializer
         );
         System.in.read();
-        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> actorSystem.terminate());
 
     }
 }

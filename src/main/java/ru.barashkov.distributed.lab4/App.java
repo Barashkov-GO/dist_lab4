@@ -25,7 +25,7 @@ public class App {
         ActorRef actorRouter = system.actorOf(Props.create(ActorRouter.class));
         final Http http = Http.get(system);
         ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
-        MainHttp instance = new MainHttp(system);
+        MainHttp instance = new MainHttp(actorRouter);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.getRoute().flow(system, actorMaterializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,

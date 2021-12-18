@@ -11,10 +11,10 @@ import javax.script.ScriptException;
 
 public class ActorTest extends AbstractActor {
     private final static String ENGINE = "nashorn";
-    private final ActorRef StorageActorRef;
+    private final ActorRef storageActorRef;
 
     public ActorTest(ActorRef StorageActorRef) {
-        this.StorageActorRef = StorageActorRef;
+        this.storageActorRef = StorageActorRef;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ActorTest extends AbstractActor {
                     testPackage.getFuncName(),
                     t.getParams()
             );
-            StorageActorRef.tell(
+            storageActorRef.tell(
                     new MessageSetResult(
                             testPackage.getPackageId(),
                             t.getTestName(),

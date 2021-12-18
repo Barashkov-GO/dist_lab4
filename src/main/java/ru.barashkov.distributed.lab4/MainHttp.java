@@ -17,7 +17,7 @@ public class MainHttp {
     private final static String TESTING_STR = "Start testing...\n";
     private final static Duration TIME_OUT = Duration.ofSeconds(5);
 
-    private ActorRef actorRouter;
+    private final ActorRef actorRouter;
 
     public MainHttp(ActorRef actorRouter) {
         this.actorRouter = actorRouter;
@@ -45,7 +45,7 @@ public class MainHttp {
                             () -> entity(
                                     Jackson.unmarshaller(TestPackage.class),
                                     m -> {
-                                            actorRouter.tell(m, ActorRef.noSender();
+                                            actorRouter.tell(m, ActorRef.noSender());
                                             return complete(TESTING_STR);
                                     }
                             )

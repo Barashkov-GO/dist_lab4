@@ -38,7 +38,7 @@ public class ActorRouter extends AbstractActor {
                 ).
                 match(
                         TestPackage.class,
-                        m -> router.route()
+                        m -> router.route(m, ActorRef.noSender())
                 ).
                 build();
     }

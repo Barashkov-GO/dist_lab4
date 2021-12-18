@@ -14,7 +14,7 @@ public class TestPackage {
     @JsonCreator
     public TestPackage(
             @JsonProperty("packageId") Integer packageId,
-            @JsonProperty("jscript") String jscript,
+            @JsonProperty("jsScript") String jscript,
             @JsonProperty("functionName") String funcName,
             @JsonProperty("tests") ArrayList<Test> tests) {
         this.funcName = funcName;

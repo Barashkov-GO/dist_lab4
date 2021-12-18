@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import scala.concurrent.Future;
 
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 import static java.security.AccessController.getContext;
@@ -24,7 +25,7 @@ public class App {
     private final static String SERVER_IP = "localhost";
     private final static Integer SERVER_PORT = 8080;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create(SYSTEM_NAME);
         ActorRef actorRouter = system.actorOf(Props.create(ActorRouter.class));
         final Http http = Http.get(system);
@@ -37,6 +38,6 @@ public class App {
                 actorMaterializer
         );
         System.in.read();
-        
+
     }
 }

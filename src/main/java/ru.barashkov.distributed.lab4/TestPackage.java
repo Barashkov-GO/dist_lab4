@@ -1,5 +1,6 @@
 package ru.barashkov.distributed.lab4;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ public class TestPackage {
     private final String funcName;
     private static ArrayList<Test> tests;
 
+    @JsonCreator
     public TestPackage(
             @JsonProperty("packageId") Integer packageId,
             @JsonProperty("jscript") String jscript,

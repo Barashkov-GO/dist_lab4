@@ -1,5 +1,6 @@
 package ru.barashkov.distributed.lab4;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 public class MessageGetResult {
     private final Integer Id;
 
+    @JsonCreator
     public MessageGetResult(
             @JsonProperty("packageId") String packageId) {
         this.Id = Integer.valueOf(packageId);

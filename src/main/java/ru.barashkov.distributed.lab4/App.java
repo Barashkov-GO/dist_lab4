@@ -18,7 +18,6 @@ import scala.concurrent.Future;
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
-import static java.security.AccessController.getContext;
 
 public class App {
     private final static String SYSTEM_NAME = "js";
@@ -31,7 +30,9 @@ public class App {
         final Http http = Http.get(actorSystem);
         ActorMaterializer actorMaterializer = ActorMaterializer.create(actorSystem);
         MainHttp instance = new MainHttp(actorRouter);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.getRoute().flow(actorSystem, actorMaterializer);
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.
+                getRoute().
+                flow(actorSystem, actorMaterializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(SERVER_IP, SERVER_PORT),
